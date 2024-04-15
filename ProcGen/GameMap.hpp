@@ -12,7 +12,7 @@ public:
 	Tile** tiles;
 	sf::Font& font;
 
-	GameMap(int width, int height);
+	GameMap(int width, int height, sf::Font& font);
 	~GameMap();
 	void render(sf::RenderWindow& window) const;
 	bool in_bounds(sf::Vector2f) const;

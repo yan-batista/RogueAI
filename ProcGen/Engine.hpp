@@ -9,11 +9,12 @@ class Engine {
 	std::vector<Entity> entities;
 	Entity& player;
 	sf::RenderWindow& window;
-	GameMap game_map;
+	GameMap& game_map;
 
 public:
-	Engine(std::vector<Entity> new_entities, Entity& new_player, sf::RenderWindow& new_window, GameMap game_map);
+	Engine(std::vector<Entity> new_entities, Entity& new_player, sf::RenderWindow& new_window, GameMap& game_map);
 	void render();
+	void handle_events(sf::Event&);
 };
 
 #endif ENGINE_HPP

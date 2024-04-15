@@ -1,6 +1,7 @@
 #include "GameMap.hpp"
+#include <iostream>
 
-GameMap::GameMap(int width, int height) : map_width(width), map_height(height) {
+GameMap::GameMap(int width, int height, sf::Font& font) : map_width(width), map_height(height), font(font) {
     int number_of_tiles_width = map_width / tile_size;
     int number_of_tiles_height = map_height / tile_size;
 
@@ -28,7 +29,7 @@ GameMap::~GameMap() {
 }
 
 bool GameMap::in_bounds(sf::Vector2f position) const {
-	return (position.x < map_width || position.x > map_width) && (position.y < map_height || position.y > map_height);
+	return (position.x >= 0 || position.x < map_width) && (position.y >= 0 || position.y < map_height);
 }
 
 void GameMap::render(sf::RenderWindow& window) const {
